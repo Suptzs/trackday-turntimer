@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trackday Turn Timer</title>
+    <link rel="stylesheet" href="turntimer.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="grid-container">
+        <div id="clock-parent" class="clock-container">
+            <canvas id="clock"></canvas>
+        </div>
+        <div class="countdown-cards-container">
+            <div id="current-group" class="current container">
+                <div><span>On Track</span></div>
+                <div class="riders">
+                    <p>Dany</p>
+                    <p>Markus</p>
+                </div>
+            </div>
+            <div id="next-group" class="next container">
+                <div class="next-titel"><span>Next</span></div>
+                <div class="next-riders">
+                    <p>Pascal</p>
+                </div>
+                <div class="countdown">
+                    <p id="countdown"></p>
+                </div>
+            </div>
+            <div class="preview container">
+                <div><span>16:40</span></div>
+                <div class="riders">
+                    <p>Maurus</p>
+                </div>
+            </div>
+            <div class="preview container">
+                <div><span>17:00</span></div>
+                <div class="riders">
+                    <p>Dany</p>
+                    <p>Markus</p>
+                </div>
+            </div>
+
+            <button class="open-button" onclick="openForm()">Edit Groups & Riders</button>
+
+            <div class="chat-popup" id="myForm">
+                <form action="/action_page.php" class="form-container">
+                    <h1>Edit Groups & Riders</h1>
+
+                    <p><input type="number" name="minutes" value="20" min="5" max="60" step="5"> minutes per turn</p>
+                    <p><input type="number" name="groups" value="3" min="2" max="5"> groups</p>
+                    <p><input type="number" name="morning-turns" value="3" min="2" max="5"> morning turns, starting at
+                        <input type="time" name="morning-time" value="08:20" min="07:00" max="12:00" step="600">
+                    </p>
+                    <p><input type="number" name="afternoon-turns" value="3" min="2" max="5"> afternoon turns, starting
+                        at <input type="time" name="afternoon-time" value="13:20" min="12:00" max="19:00" step="600">
+                    </p>
+
+
+                    <button type="submit" class="btn">Save</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="clock.js"></script>
+    <script src="countdown.js"></script>
+    <script>
+        startTimer(865, document.getElementById("countdown"));
+        navigator.serviceWorker.register("/haruko.js");
+
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
