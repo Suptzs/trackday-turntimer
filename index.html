@@ -82,7 +82,7 @@
         startTimer(865, document.getElementById("countdown"));
         
         if (navigator.serviceWorker) {
-            navigator.serviceWorker.register('/{repository}/serviceworker.js', {scope: '/{repository}/'})
+            navigator.serviceWorker.register('serviceworker.js', {scope: '/{repository}/'})
         }
 
         function openForm() {
