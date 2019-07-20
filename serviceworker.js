@@ -2,11 +2,11 @@ var APP_PREFIX = 'trackday-turntimer'   // Identifier for this app (this needs t
 var VERSION = 'version_01'              // Version of the off-line cache (change this value everytime you want to update cache)
 var CACHE_NAME = APP_PREFIX + VERSION
 var URLS = [                            // Add URL you want to cache in this list.
-  '/',                                  // If you have separate JS/CSS files,
-  '/index.html',                        // add path to those files here
-  '/turntimer.css',
-  '/clock.js',
-  '/countdown.js'
+  '/trackday-turntimer/',               // If you have separate JS/CSS files,
+  '/trackday-turntimer/index.html',     // add path to those files here
+  '/trackday-turntimer/turntimer.css',
+  '/trackday-turntimer/clock.js',
+  '/trackday-turntimer/countdown.js'
 ]
 
 // Respond with cached resources
