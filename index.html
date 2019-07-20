@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trackday Turn Timer</title>
+    <link rel="canonical" href="https://{github_username}.github.io/{repository}/" />
     <link rel="stylesheet" href="turntimer.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
@@ -79,7 +80,10 @@
     <script src="countdown.js"></script>
     <script>
         startTimer(865, document.getElementById("countdown"));
-        navigator.serviceWorker.register("/haruko.js");
+        
+        if (navigator.serviceWorker) {
+            navigator.serviceWorker.register('/{repository}/haruko.js', {scope: '/{repository}/'})
+        }
 
         function openForm() {
             document.getElementById("myForm").style.display = "block";
