@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trackday Turn Timer</title>
-    <link rel="canonical" href="https://{github_username}.github.io/{repository}/" />
+    <link rel="canonical" href="https://suptzs.github.io/trackday-turntimer/" />
     <link rel="stylesheet" href="turntimer.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
@@ -82,7 +82,7 @@
         startTimer(865, document.getElementById("countdown"));
         
         if (navigator.serviceWorker) {
-            navigator.serviceWorker.register('serviceworker.js', {scope: '/{repository}/'})
+            navigator.serviceWorker.register('serviceworker.js', {scope: '/trackday-turntimer/'})
         }
 
         function openForm() {
