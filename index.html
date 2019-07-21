@@ -20,36 +20,36 @@
             <div id="current-group" class="current container">
                 <div><span>On Track</span></div>
                 <div class="riders">
-                    <p>Dany</p>
-                    <p>Markus</p>
+                    <p>Rider 1</p>
+                    <p>Rider 2</p>
                 </div>
             </div>
             <div id="next-group" class="next container">
                 <div class="next-titel"><span>Next</span></div>
                 <div class="next-riders">
-                    <p>Pascal</p>
+                    <p>Rider 3</p>
                 </div>
                 <div class="countdown">
                     <p id="countdown"></p>
                 </div>
             </div>
             <div class="preview container">
-                <div><span>16:40</span></div>
+                <div><span>11:20</span></div>
                 <div class="riders">
-                    <p>Maurus</p>
+                    <p>Rider 4</p>
                 </div>
             </div>
             <div class="preview container">
-                <div><span>17:00</span></div>
+                <div><span>11:40</span></div>
                 <div class="riders">
-                    <p>Dany</p>
-                    <p>Markus</p>
+                    <p>Rider 1</p>
+                    <p>Rider 2</p>
                 </div>
             </div>
             <div class="preview container">
-                <div><span>17:20</span></div>
+                <div><span>13:20</span></div>
                 <div class="riders">
-                    <p>Pascal</p>
+                    <p>Rider 3</p>
                 </div>
             </div>
 
@@ -57,16 +57,42 @@
 
             <div class="options-popup" id="options">
                 <div class="options-container">
-                    <h1>Edit Groups & Riders</h1>
+                    <h2>Edit Groups & Riders</h2>
 
-                    <p><input type="number" id="minutes" name="minutes" value="20" min="5" max="60" step="5"> minutes per turn</p>
-                    <p><input type="number" id="groups" name="groups" value="3" min="2" max="5"> groups</p>
-                    <p><input type="number" id="morning-turns" name="morning-turns" value="3" min="2" max="5"> morning turns, starting at
-                        <input type="time" id="morning-time" name="morning-time" value="08:20" min="07:00" max="12:00" step="600">
-                    </p>
-                    <p><input type="number" id="afternoon-turns" name="afternoon-turns" value="3" min="2" max="5"> afternoon turns, starting
-                        at <input type="time" id="afternoon-time" name="afternoon-time" value="13:20" min="12:00" max="19:00" step="600">
-                    </p>
+                    <h3>Group Options</h3>
+                    <div class="group-options">
+                        <div class="option">
+                            <input type="number" id="minutes" name="minutes" value="20" min="5" max="60" step="5">
+                            <span>minutes per turn</span>
+                        </div>
+                        <div class="option">
+                            <input type="number" id="groups" name="groups" value="3" min="2" max="5">
+                            <span>groups</span>
+                        </div>
+                        <div class="option">
+                            <input type="number" id="morning-turns" name="morning-turns" value="3" min="2" max="5">
+                            <span>morning turns, starting at</span>
+                            <input type="time" id="morning-time" name="morning-time" value="08:20" min="07:00"
+                                max="12:00" step="600">
+                        </div>
+                        <div class="option">
+                            <input type="number" id="afternoon-turns" name="afternoon-turns" value="3" min="2" max="5">
+                            <span>afternoon turns, starting at</span>
+                            <input type="time" id="afternoon-time" name="afternoon-time" value="13:20" min="12:00"
+                                max="19:00" step="600">
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3>Riders</h3>
+                        <input type="text" id="new-rider" placeholder="Name...">
+                        <span class="addBtn">Add</span>
+                    </div>
+                    <ul id="rider-list">
+                        <li>Rider 1</li>
+                        <li>Rider 2</li>
+                        <li>Rider 3</li>
+                        <li>Rider 4</li>
+                    </ul>
 
                     <button type="button" id="save-btn" class="btn">Save</button>
                     <button type="button" id="cancel-btn" class="btn cancel">Cancel</button>
