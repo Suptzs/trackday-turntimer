@@ -1,12 +1,16 @@
-var canvas = document.getElementById("clock");
-var parent = document.getElementById("clock-parent");
-canvas.width = Math.min(parent.offsetWidth, parent.offsetHeight);
-canvas.height = canvas.width;
-var ctx = canvas.getContext("2d");
-var radius = canvas.height / 2;
-ctx.translate(radius, radius);
-radius = radius * 0.90
-setInterval(drawClock, 100);
+var ctx;
+var radius;
+
+function resizeClockFace() {
+    var canvas = document.getElementById("clock");
+    var parent = document.getElementById("grid-container");
+    canvas.width = Math.min(parent.offsetWidth / 2, parent.offsetHeight);
+    canvas.height = canvas.width;
+    ctx = canvas.getContext("2d");
+    radius = canvas.height / 2;
+    ctx.translate(radius, radius);
+    radius = radius * 0.90
+}
 
 function drawClock() {
     drawFace(ctx, radius);

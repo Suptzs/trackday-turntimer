@@ -6,7 +6,9 @@ var URLS = [                            // Add URL you want to cache in this lis
   '/trackday-turntimer/index.html',     // add path to those files here
   '/trackday-turntimer/turntimer.css',
   '/trackday-turntimer/clock.js',
-  '/trackday-turntimer/countdown.js'
+  '/trackday-turntimer/countdown.js',
+  '/trackday-turntimer/options.js',
+  '/trackday-turntimer/setup.js'
 ]
 
 // Respond with cached resources

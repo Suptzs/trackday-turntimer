@@ -12,8 +12,8 @@
 </head>
 
 <body>
-    <div class="grid-container">
-        <div id="clock-parent" class="clock-container">
+    <div id="grid-container" class="grid-container">
+        <div class="clock-container">
             <canvas id="clock"></canvas>
         </div>
         <div class="countdown-cards-container">
@@ -53,44 +53,35 @@
                 </div>
             </div>
 
-            <button class="open-button" onclick="openForm()">Edit Groups & Riders</button>
+            <button class="open-button" id="open-button">Edit Groups & Riders</button>
 
-            <div class="chat-popup" id="myForm">
-                <form action="/action_page.php" class="form-container">
+            <div class="options-popup" id="options">
+                <div class="options-container">
                     <h1>Edit Groups & Riders</h1>
 
-                    <p><input type="number" name="minutes" value="20" min="5" max="60" step="5"> minutes per turn</p>
-                    <p><input type="number" name="groups" value="3" min="2" max="5"> groups</p>
-                    <p><input type="number" name="morning-turns" value="3" min="2" max="5"> morning turns, starting at
-                        <input type="time" name="morning-time" value="08:20" min="07:00" max="12:00" step="600">
+                    <p><input type="number" id="minutes" name="minutes" value="20" min="5" max="60" step="5"> minutes per turn</p>
+                    <p><input type="number" id="groups" name="groups" value="3" min="2" max="5"> groups</p>
+                    <p><input type="number" id="morning-turns" name="morning-turns" value="3" min="2" max="5"> morning turns, starting at
+                        <input type="time" id="morning-time" name="morning-time" value="08:20" min="07:00" max="12:00" step="600">
                     </p>
-                    <p><input type="number" name="afternoon-turns" value="3" min="2" max="5"> afternoon turns, starting
-                        at <input type="time" name="afternoon-time" value="13:20" min="12:00" max="19:00" step="600">
+                    <p><input type="number" id="afternoon-turns" name="afternoon-turns" value="3" min="2" max="5"> afternoon turns, starting
+                        at <input type="time" id="afternoon-time" name="afternoon-time" value="13:20" min="12:00" max="19:00" step="600">
                     </p>
 
-
-                    <button type="submit" class="btn">Save</button>
-                    <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
-                </form>
+                    <button type="button" id="save-btn" class="btn">Save</button>
+                    <button type="button" id="cancel-btn" class="btn cancel">Cancel</button>
+                </div>
             </div>
         </div>
     </div>
 
     <script src="clock.js"></script>
     <script src="countdown.js"></script>
+    <script src="options.js"></script>
+    <script src="setup.js"></script>
+
     <script>
         startTimer(865, document.getElementById("countdown"));
-        
-        if (navigator.serviceWorker) {
-            navigator.serviceWorker.register('serviceworker.js', {scope: '/trackday-turntimer/'})
-        }
-
-        function openForm() {
-            document.getElementById("myForm").style.display = "block";
-        }
-        function closeForm() {
-            document.getElementById("myForm").style.display = "none";
-        }
     </script>
 </body>
 

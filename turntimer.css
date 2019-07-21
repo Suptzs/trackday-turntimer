@@ -89,7 +89,7 @@ p {
   }
   
   /* The popup chat - hidden by default */
-  .chat-popup {
+  .options-popup {
     display: none;
     position: fixed;
     bottom: 0;
@@ -99,20 +99,20 @@ p {
   }
   
   /* Add styles to the form container */
-  .form-container {
+  .options-container {
     max-width: 500px;
     padding: 10px;
     background-color: white;
   }
   
   /* When the textarea gets focus, do something */
-  .form-container textarea:focus {
+  .options-container textarea:focus {
     background-color: #ddd;
     outline: none;
   }
   
   /* Set a style for the submit/send button */
-  .form-container .btn {
+  .options-container .btn {
     background-color: #4CAF50;
     color: white;
     padding: 16px 20px;
@@ -124,13 +124,13 @@ p {
   }
   
   /* Add a red background color to the cancel button */
-  .form-container .cancel {
+  .options-container .cancel {
     background-color: red;
     margin-top: 0px;
   }
   
   /* Add some hover effects to buttons */
-  .form-container .btn:hover, .open-button:hover {
+  .options-container .btn:hover, .open-button:hover {
     opacity: 1;
   }
 
