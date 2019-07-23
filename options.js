@@ -1,5 +1,7 @@
 function openOptions() {
     document.getElementById("options").style.display = "block";
+    document.getElementById("grid-container").style.display = "none";
+    document.getElementById("open-button").style.display = "none";
 
     document.getElementById("minutes").value = localStorage.minutes;
     document.getElementById("groups").value = localStorage.groups;
@@ -11,6 +13,8 @@ function openOptions() {
 
 function closeOptions() {
     document.getElementById("options").style.display = "none";
+    document.getElementById("grid-container").style.display = "grid";
+    document.getElementById("open-button").style.display = "inline-block";
 }
 
 function saveOptions() {

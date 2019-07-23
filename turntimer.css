@@ -3,8 +3,6 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    position: fixed;
-    overflow-y: scroll;
     width: 100%;
 }
 
@@ -18,6 +16,7 @@ p {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     height: 100vh;
+    /* position: fixed; */
 }
 
 .clock-container {
@@ -105,17 +104,23 @@ p {
 
 .options-popup {
     display: none;
-    position: fixed;
-    bottom: 0;
-    right: 10px;
+    /* position: absolute; */
+    /* bottom: 0;
+    right: 10px; */
     border: 3px solid #f1f1f1;
     z-index: 9;
 }
 
+/* @media (orientation: portrait) {
+    .options-popup {
+        right: 0px;
+    }
+} */
+
 /* Add styles to the form container */
 
 .options-container {
-    max-width: 500px;
+    /* max-width: 500px; */
     padding: 10px;
     background-color: white;
 }
