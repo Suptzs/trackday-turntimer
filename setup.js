@@ -9,10 +9,13 @@ function registerServiceWorker() {
 }
 
 function setupEvents() {
-    // options form
+    // options form open and close
     document.getElementById('open-button').addEventListener('click', openOptions);
     document.getElementById('cancel-btn').addEventListener('click', closeOptions);
     document.getElementById('save-btn').addEventListener('click', () => { saveOptions(); closeOptions() });
+
+    // changing options
+    document.getElementById('groups').addEventListener('change', groupsChanged);
 
     // clock face
     window.addEventListener('resize', resizeClockFace);

@@ -25,3 +25,27 @@ function saveOptions() {
     localStorage.afternoonturns = document.getElementById("afternoon-turns").value;
     localStorage.afternoontime = document.getElementById("afternoon-time").value;
 }
+
+var groupOptions = {};
+groupOptions[2] = [1, 2];
+groupOptions[3] = [1, 2, 3];
+groupOptions[4] = [1, 2, 3, 4];
+groupOptions[5] = [1, 2, 3, 4, 5];
+
+function groupsChanged() {
+    const groups = document.getElementById('groups').value;
+    var dropdowns = document.getElementsByClassName('rider-group');
+
+    for (var i = 0; i < dropdowns.length; i++) {
+        while(dropdowns[i].options.length) {
+            dropdowns[i].remove(0);
+        }
+        var options = groupOptions[groups];
+        if (options) {
+            for (var j = 0; j < options.length; j++) {
+                var option = new Option(options[j], j);
+                dropdowns[i].options.add(option);
+            }
+        }
+    }
+}
