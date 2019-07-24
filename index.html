@@ -65,24 +65,47 @@
             <h3>Group Options</h3>
             <div class="group-options">
                 <div class="option">
-                    <input type="number" id="minutes" name="minutes" value="20" min="5" max="60" step="5">
+                    <select name="minutes" id="minutes">
+                        <option>10</option>
+                        <option>15</option>
+                        <option>20</option>
+                        <option>25</option>
+                        <option>30</option>
+                        <option>35</option>
+                        <option>40</option>
+                    </select>
                     <span>minutes per turn</span>
                 </div>
                 <div class="option">
-                    <input type="number" id="groups" name="groups" value="3" min="2" max="5">
+                    <select name="groups" id="groups">
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
                     <span>groups</span>
                 </div>
                 <div class="option">
-                    <input type="number" id="morning-turns" name="morning-turns" value="3" min="2" max="5">
+                    <select name="morning-turns" id="morning-turns">
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
                     <span>morning turns, starting at</span>
                     <input type="time" id="morning-time" name="morning-time" value="08:20" min="07:00" max="12:00"
                         step="600">
                 </div>
                 <div class="option">
-                    <input type="number" id="afternoon-turns" name="afternoon-turns" value="3" min="2" max="5">
+                    <select name="afternoon-turns" id="afternoon-turns">
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
                     <span>afternoon turns, starting at</span>
-                    <input type="time" id="afternoon-time" name="afternoon-time" value="13:20" min="12:00"
-                        max="19:00" step="600">
+                    <input type="time" id="afternoon-time" name="afternoon-time" value="13:20" min="12:00" max="19:00"
+                        step="600">
                 </div>
             </div>
             <div class="header">
@@ -91,10 +114,30 @@
                 <span onclick="newRider()" class="addBtn">Add</span>
             </div>
             <ul id="rider-list">
-                <li>Rider 1</li>
-                <li>Rider 2</li>
-                <li>Rider 3</li>
-                <li>Rider 4</li>
+                <li>Rider 1 is in group <select class="rider-group">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select></li>
+                <li>Rider 2 is in group <select class="rider-group">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select></li>
+                <li>Rider 3 is in group <select class="rider-group">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select></li>
+                <li>Rider 4 is in group <select class="rider-group">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select></li>
             </ul>
 
             <button type="button" id="cancel-btn" class="btn cancel">Cancel</button>
