@@ -249,3 +249,7 @@ input[type=time] {
 .addBtn:hover {
     background-color: #bbb;
 }
+
+.rider-name {
+    font-weight: bold;
+}

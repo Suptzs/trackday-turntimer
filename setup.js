@@ -14,8 +14,9 @@ function setupEvents() {
     document.getElementById('cancel-btn').addEventListener('click', closeOptions);
     document.getElementById('save-btn').addEventListener('click', () => { saveOptions(); closeOptions() });
 
-    // changing options
+    // options
     document.getElementById('groups').addEventListener('change', groupsChanged);
+    document.getElementById('addBtn').addEventListener('click', newRider);
 
     // clock face
     window.addEventListener('resize', resizeClockFace);
@@ -44,5 +45,9 @@ function initialize() {
     }
     if (!localStorage.afternoontime) {
         localStorage.afternoontime = "13:20";
+    }
+    if (!localStorage.riders) {
+        var riders = { "Marc Marquez": 1, "Valentino Rossi": 2 };
+        localStorage.riders = JSON.stringify(riders);
     }
 }
