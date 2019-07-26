@@ -5,10 +5,10 @@ function openOptions() {
 
     document.getElementById("minutes").value = localStorage.minutes;
     document.getElementById("groups").value = localStorage.groups;
-    document.getElementById("morning-turns").value = localStorage.morningturns;
-    document.getElementById("morning-time").value = localStorage.morningtime;
-    document.getElementById("afternoon-turns").value = localStorage.afternoonturns;
-    document.getElementById("afternoon-time").value = localStorage.afternoontime;
+    document.getElementById("turns").value = localStorage.turns;
+    document.getElementById("start-time").value = localStorage.starttime;
+    document.getElementById("lunch-start").value = localStorage.lunchStart;
+    document.getElementById("lunch-end").value = localStorage.lunchEnd;
 
     var e = document.getElementById("rider-list");
     var child = e.lastElementChild;
@@ -34,10 +34,10 @@ function closeOptions() {
 function saveOptions() {
     localStorage.minutes = document.getElementById("minutes").value;
     localStorage.groups = document.getElementById("groups").value;
-    localStorage.morningturns = document.getElementById("morning-turns").value;
-    localStorage.morningtime = document.getElementById("morning-time").value;
-    localStorage.afternoonturns = document.getElementById("afternoon-turns").value;
-    localStorage.afternoontime = document.getElementById("afternoon-time").value;
+    localStorage.turns = document.getElementById("turns").value;
+    localStorage.starttime = document.getElementById("start-time").value;
+    localStorage.lunchStart = document.getElementById("lunch-start").value;
+    localStorage.lunchEnd = document.getElementById("lunch-end").value;
 
     var riders = {};
     var riderList = document.getElementById("rider-list");
@@ -98,7 +98,7 @@ function createRiderListItem(name, group = 1) {
     theName.innerText = name;
 
     li.appendChild(theName);
-    li.appendChild(document.createTextNode(" is in group "));
+    li.appendChild(document.createTextNode(" is in Group "));
 
     var dropdown = document.createElement("select");
     dropdown.className = "rider-group";
