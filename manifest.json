@@ -10,6 +10,6 @@
     ],
     "start_url": "/trackday-turntimer/?utm_source=homescreen",
     "background_color": "#333",
-    "Theme_color": "#eee",
+    "theme_color": "#eee",
     "display": "standalone"
   }
