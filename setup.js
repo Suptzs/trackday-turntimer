@@ -12,7 +12,7 @@ function setupEvents() {
     // options form open and close
     document.getElementById('open-button').addEventListener('click', openOptions);
     document.getElementById('cancel-btn').addEventListener('click', closeOptions);
-    document.getElementById('save-btn').addEventListener('click', () => { saveOptions(); closeOptions() });
+    document.getElementById('save-btn').addEventListener('click', () => { saveOptions(); closeOptions(), updateTurns() });
 
     // options
     document.getElementById('groups').addEventListener('change', groupsChanged);
@@ -37,13 +37,13 @@ function initialize() {
         localStorage.starttime = "08:20";
     }
     if (!localStorage.lunchStart) {
-        localStorage.lunchStart = "11:40";
+        localStorage.lunchStart = "12:20";
     }
     if (!localStorage.lunchEnd) {
         localStorage.lunchEnd = "13:20";
     }
     if (!localStorage.riders) {
-        var riders = { "Marc Marquez": 1, "Valentino Rossi": 2 };
+        var riders = { 1: ["Marquez", "Lorenzo"] , 2: ["Rossi"] };
         localStorage.riders = JSON.stringify(riders);
     }
 
@@ -52,5 +52,5 @@ function initialize() {
     setInterval(drawClock, 100);
 
     // turn containers
-    updateTurns();
+    updateTurnsForever();
 }

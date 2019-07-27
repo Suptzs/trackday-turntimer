@@ -17,15 +17,15 @@
         <div class="clock-container">
             <canvas id="clock"></canvas>
         </div>
-        <div class="countdown-cards-container">
-            <div id="current-group" class="current container">
+        <div id="turn-overview" class="countdown-cards-container">
+            <div class="current container">
                 <div><span>On Track</span></div>
                 <div class="riders">
                     <p>Rider 1</p>
                     <p>Rider 2</p>
                 </div>
             </div>
-            <div id="next-group" class="next container">
+            <div class="next container">
                 <div class="next-titel"><span>Next</span></div>
                 <div class="next-riders">
                     <p>Rider 3</p>
@@ -132,12 +132,9 @@
 
     <script src="clock.js"></script>
     <script src="countdown.js"></script>
+    <script src="timecontainers.js"></script>
     <script src="options.js"></script>
     <script src="setup.js"></script>
-
-    <script>
-        startTimer(865, document.getElementById("countdown"));
-    </script>
 </body>
 
 </html>

@@ -18,10 +18,13 @@ function openOptions() {
     }
 
     var riders = JSON.parse(localStorage.riders);
-    for (const name in riders) {
-        const group = riders[name];
-        var li = createRiderListItem(name, group);
-        document.getElementById("rider-list").appendChild(li);
+    for (const group in riders) {
+        const names = riders[group];
+        for (let i = 0; i < names.length; i++) {
+            const name = names[i];
+            var li = createRiderListItem(name, group);
+            document.getElementById("rider-list").appendChild(li);
+        }
     }
 }
 
@@ -40,12 +43,16 @@ function saveOptions() {
     localStorage.lunchEnd = document.getElementById("lunch-end").value;
 
     var riders = {};
+    for (let i = 1; i <= localStorage.groups; i++) {
+        riders[i] = [];
+    }
+
     var riderList = document.getElementById("rider-list");
     for (var i = 0; i < riderList.children.length; i++) {
         var rider = riderList.children[i];
         var name = rider.getElementsByClassName("rider-name")[0].innerText;
         var group = rider.getElementsByClassName("rider-group")[0].selectedIndex + 1;
-        riders[name] = group;
+        riders[group].push(name);
     }
     localStorage.riders = JSON.stringify(riders);
 }
