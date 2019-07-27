@@ -34,7 +34,7 @@ function initialize() {
         localStorage.turns = 7;
     }
     if (!localStorage.starttime) {
-        localStorage.starttime = "08:20";
+        localStorage.starttime = "09:20";
     }
     if (!localStorage.lunchStart) {
         localStorage.lunchStart = "12:20";
