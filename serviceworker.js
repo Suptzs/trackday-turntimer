@@ -7,6 +7,7 @@ var URLS = [                            // Add URL you want to cache in this lis
   '/trackday-turntimer/turntimer.css',
   '/trackday-turntimer/manifest.json',
   '/trackday-turntimer/icon_192x192.PNG',
+  '/trackday-turntimer/icon_512x512.PNG',
   '/trackday-turntimer/clock.js',
   '/trackday-turntimer/countdown.js',
   '/trackday-turntimer/timecontainers.js',
