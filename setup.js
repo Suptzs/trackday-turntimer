@@ -49,8 +49,9 @@ function initialize() {
 
     // clock
     resizeClockFace();
-    setInterval(drawClock, 100);
-
     // turn containers
-    updateTurnsForever();
+    updateTurns();
+
+    // update both periodically
+    setInterval(() => {drawClock(); countdownToNextTurn();}, 100);
 }

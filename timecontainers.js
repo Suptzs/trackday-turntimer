@@ -1,6 +1,38 @@
-function updateTurnsForever() {
-    var nextUpdate = updateTurns();
-    setTimeout(updateTurnsForever, nextUpdate);
+function countdownToNextTurn() {
+    const cd = document.getElementById("countdown");
+    const time = new Date(cd.getAttribute("value"));
+    const now = new Date();
+
+    var duration = (time - now) / 1000 + 1;
+
+    if(duration <= 0) {
+        updateTurns();
+    } else {
+        updateCountdown(duration, cd);
+    }
+}
+
+function updateCountdown(time, display) {
+    display.textContent = fancyTimeFormat(time);
+}
+
+function fancyTimeFormat(time)
+{   
+    // Hours, minutes and seconds
+    var hrs = ~~(time / 3600);
+    var mins = ~~((time % 3600) / 60);
+    var secs = ~~time % 60;
+
+    // Output like "01:01" or "4:03:59" or "123:03:59"
+    var ret = "";
+
+    if (hrs > 0) {
+        ret += "" + hrs + ":";
+    }
+
+    ret += "" + (mins < 10 ? "0" + mins : mins) + ":" + (secs < 10 ? "0" : "");
+    ret += "" + secs;
+    return ret;
 }
 
 function updateTurns() {
@@ -60,12 +92,6 @@ function updateTurns() {
     }
 
     updateContainers(turns);
-
-    var countdown = (turns[1].start - now);
-
-    startTimer(countdown / 1000, document.getElementById("countdown"));
-
-    return countdown;
 }
 
 function updateContainers(turns) {
@@ -141,6 +167,7 @@ function createNextTurn(turns, riders) {
     next.appendChild(countdown);
     var cd = document.createElement("p");
     cd.setAttribute("id", "countdown");
+    cd.setAttribute("value", turns[1].start);
     countdown.appendChild(cd);
 
     if (turns[1].type == "lunch") {
